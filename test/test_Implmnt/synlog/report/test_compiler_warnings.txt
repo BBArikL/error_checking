@@ -1,0 +1,4 @@
+@W: CG730 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":25:7:25:22|Top-level module ErrorChecking_tb has no ports
+@W: CG146 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking.v":63:7:63:19|Creating black box for empty module ErrorChecking
+@W: CG532 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":33:1:33:7|Within an initial block, only Verilog force statements and memory $readmemh/$readmemb initialization statements are recognized, and all other content is ignored.
+

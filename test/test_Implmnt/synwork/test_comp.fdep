@@ -1,0 +1,22 @@
+#OPTIONS:"|-layerid|0|-orig_srs|C:\\Users\\Luigi\\OneDrive\\Documents\\Poly\\autre\\PolyOrbit\\test\\test_Implmnt\\synwork\\test_comp.srs|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-ice|-sdff_counter|-nram|-divnmod|-nostructver|-I|C:\\Users\\Luigi\\OneDrive\\Documents\\Poly\\autre\\PolyOrbit\\test\\|-I|C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib|-v2001|-devicelib|C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\generic\\sb_ice40.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work|-lib|work"
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\bin64\\c_ver.exe":1642464396
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\generic\\sb_ice40.v":1642464398
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\hypermods.v":1642464398
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\umr_capim.v":1642464398
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\scemi_objects.v":1642464398
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\scemi_pipes.svh":1642464398
+#CUR:"C:\\Users\\Luigi\\OneDrive\\Documents\\Poly\\autre\\PolyOrbit\\error_checking\\src\\error_checking.v":1642626618
+#CUR:"C:\\Users\\Luigi\\OneDrive\\Documents\\Poly\\autre\\PolyOrbit\\error_checking\\src\\error_checking_tb.v":1642464466
+0			"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking.v" verilog
+1			"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v" verilog
+#Dependency Lists(Uses List)
+0 -1
+1 0
+#Dependency Lists(Users Of)
+0 1
+1 -1
+#Design Unit to File Association
+module work ErrorChecking_tb 1
+module work StateMachine 0
+module work ErrorChecking 0
+module work CheckFunction 0

@@ -1,0 +1,12 @@
+[Version]
+Version=11.1
+[Designs]
+error_checking=.\error_checking.adf
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+macro=
+[Expand]
+error_checking=1

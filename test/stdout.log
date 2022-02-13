@@ -1,0 +1,46 @@
+Running in Lattice mode
+
+
+Starting:    C:\lscc\iCEcube2.2020.12\synpbase\bin64\mbin\synbatch.exe
+Install:     C:\lscc\iCEcube2.2020.12\synpbase
+Hostname:    BRUHMYBAD
+Date:        Thu Jan 20 18:10:04 2022
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro -batch test_syn.prj
+ProductType: synplify_pro
+
+
+
+
+
+log file: "C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.srr"
+Running: test_Implmnt in foreground
+
+Running test_syn|test_Implmnt
+
+Running: compile (Compile) on test_syn|test_Implmnt
+# Thu Jan 20 18:10:04 2022
+
+Running: compile_flow (Compile Process) on test_syn|test_Implmnt
+# Thu Jan 20 18:10:04 2022
+
+Running: compiler (Compile Input) on test_syn|test_Implmnt
+# Thu Jan 20 18:10:04 2022
+compiler exited with errors
+Job failed on: test_syn|test_Implmnt
+
+Job: "compiler" terminated with error status: 2
+See log file: "C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synlog\test_compiler.srr"
+# Thu Jan 20 18:10:05 2022
+
+Return Code: 2
+Run Time:00h:00m:01s
+Complete: Compile Process on test_syn|test_Implmnt
+Complete: Compile on test_syn|test_Implmnt
+Complete: Logic Synthesis on test_syn|test_Implmnt
+
+exit status=2
+
+exit status=2
+

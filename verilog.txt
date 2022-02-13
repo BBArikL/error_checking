@@ -1,0 +1,7 @@
+for errorCheck need a continuous assignment to drive net variables(evaluate or update) whenever an input changes value
+
+assign out = a & b;
+logical and &&, logical or || output a sigle pit 0 or 1
+
+
+Procedural assignments update the value of register variables \

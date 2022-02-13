@@ -1,0 +1,24 @@
+module localAnswer(input[3:0] question, output[3:0] answer);
+		assign answer[0] = ~question[0];
+		assign answer[1] = question[0] ^ question[1];
+		assign answer[2] = question[1] ^ question[2];
+		assign answer[3] = question[2] ^ question[3];
+endmodule
+
+module CheckFunction(output[3:0] answer, input[3:0] answerOBC, input[3:0] question);
+	
+
+
+function answerCompare;
+		input [3:0] answer, answerOBC
+		begin
+			if(answer == answerOBC)
+				answerCompare <= true;
+			else
+				answerCompare <= false;
+		end
+	endfunction
+assign result = answerCompare(  n   
+
+
+endmodule

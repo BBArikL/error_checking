@@ -1,0 +1,9 @@
+MESSAGE "Pass 1. Scanning modules hierarchy."
+MESSAGE_SP VCP2113 "Module \$root found in current working library."
+BEGINPROGRESS Compiling...
+ERROR VCP2020 "case/x/z...endcase pair(s) mismatch detected. 1 <endcase> tokens are missing." "C:/Users/Dumont/Desktop/poly/PolyOrbit/errorChecking/error_checking/src/error_checking.v" 124  12
+ERROR VCP2020 "module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing." "C:/Users/Dumont/Desktop/poly/PolyOrbit/errorChecking/error_checking/src/error_checking.v" 124  12
+ERROR VCP2000 "Syntax error. Unexpected token: end[_END]." "C:/Users/Dumont/Desktop/poly/PolyOrbit/errorChecking/error_checking/src/error_checking.v" 124  12
+UPDATEPROGRESS 35
+ENDPROGRESS Compiling...
+FAILURE "Compile failure 3 Errors 0 Warnings  Analysis time: 0[s]."
