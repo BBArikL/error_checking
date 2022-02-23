@@ -1,11 +1,9 @@
 Selecting top level module ErrorChecking_tb
 @W: CG730 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":25:7:25:22|Top-level module ErrorChecking_tb has no ports
 
-@N: CG364 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking.v":63:7:63:19|Synthesizing module ErrorChecking in library work.
-
-@W: CG146 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking.v":63:7:63:19|Creating black box for empty module ErrorChecking
-
 @N: CG364 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":25:7:25:22|Synthesizing module ErrorChecking_tb in library work.
 
 @W: CG532 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":33:1:33:7|Within an initial block, only Verilog force statements and memory $readmemh/$readmemb initialization statements are recognized, and all other content is ignored.
-@E: CS172 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":31:15:31:17|The number of ports in the instantiation does not match the number of ports in the module definition for instance dut
+@W: CG133 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":28:11:28:18|Object question is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG360 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":29:12:29:17|Removing wire answer, as there is no assignment to it.
+@W: CG133 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":32:9:32:9|Object i is declared but not assigned. Either assign a value or remove the declaration.

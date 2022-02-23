@@ -1,13 +1,13 @@
 C:\lscc\iCEcube2.2020.12\synpbase\bin64\m_generic.exe  -prodtype  synplify_pro   -encrypt  -pro  -rundir  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt   -part iCE40HX1K  -package VQ100    -maxfan 10000 -RWCheckOnRam 0 -pipe -fixgatedclocks 1 -fixgeneratedclocks 1 -summaryfile C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synlog\report\test_premap.xml  -oedif  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.edf  -conchk_prepass  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test_cck.rpt   -autoconstraint  -freq 1.000   C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_mult.srs  -flow prepass  -gcc_prepass  -osrd  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_prem.srd  -qsap  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.sap  -devicelib  C:\lscc\iCEcube2.2020.12\synpbase\lib\generic\sb_ice40.v  -ologparam  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\syntmp\test.plg  -osyn  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_prem.srd  -prjdir  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\  -prjname  test_syn  -log  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synlog\test_premap.srr 
-rc:0 success:1 runtime:0
+rc:0 success:1 runtime:1
 file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.edf|io:o|time:0|size:0|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test_cck.rpt|io:o|time:1642626621|size:1964|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_mult.srs|io:i|time:1642626621|size:1014|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_prem.srd|io:o|time:1642626621|size:1188|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.sap|io:o|time:1642626621|size:125|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test_cck.rpt|io:o|time:1645640982|size:1964|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_mult.srs|io:i|time:1645640981|size:1018|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_prem.srd|io:o|time:1645640982|size:1188|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.sap|io:o|time:1645640982|size:125|exec:0
 file:C:\lscc\iCEcube2.2020.12\synpbase\lib\generic\sb_ice40.v|io:i|time:1642464398|size:224837|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\syntmp\test.plg|io:o|time:1642626621|size:0|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_prem.srd|io:o|time:1642626621|size:1188|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synlog\test_premap.srr|io:o|time:1642626621|size:2987|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\syntmp\test.plg|io:o|time:1645640981|size:0|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_prem.srd|io:o|time:1645640982|size:1188|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synlog\test_premap.srr|io:o|time:1645640982|size:2987|exec:0
 file:C:\lscc\iCEcube2.2020.12\synpbase\bin\m_generic.exe|io:i|time:1642464396|size:17853440|exec:1
 file:C:\lscc\iCEcube2.2020.12\synpbase\bin64\m_generic.exe|io:i|time:1642464397|size:32355840|exec:1

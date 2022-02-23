@@ -22,18 +22,20 @@
 //{{ Section below this comment is automatically maintained
 //   and may be overwritten
 //{module {error_checking_tb}}
-module ErrorChecking_tb ();
+module ErrorChecking_tb;
 	
 	//input wire [3:0] question
 	reg [3:0] question;
 	wire [3:0] answer; 
 	 
-	ErrorChecking dut(question, answer);  
+	//localAnswer dut(question, answer);  
 	integer i;
 	initial begin
 		for(i = 0; i <15; i = i+1)begin
 			
 			question = i;
+			//answer = localAnswer dut(.question(question), .answer(answer));  
+
 			#10;
 		end	
 		$stop;//stops simulation

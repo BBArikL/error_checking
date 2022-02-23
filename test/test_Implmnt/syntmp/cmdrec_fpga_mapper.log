@@ -1,14 +1,14 @@
 C:\lscc\iCEcube2.2020.12\synpbase\bin64\m_generic.exe  -prodtype  synplify_pro   -encrypt  -pro  -rundir  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt   -part iCE40HX1K  -package VQ100    -maxfan 10000 -RWCheckOnRam 0 -pipe -fixgatedclocks 1 -fixgeneratedclocks 1 -summaryfile C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synlog\report\test_fpga_mapper.xml  -flow mapping  -multisrs  -oedif  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.edf   -autoconstraint  -freq 1.000   C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_prem.srd  -sap  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.sap  -otap  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.tap  -omap  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.map  -devicelib  C:\lscc\iCEcube2.2020.12\synpbase\lib\generic\sb_ice40.v  -sap  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.sap  -ologparam  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\syntmp\test.plg  -osyn  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.srm  -prjdir  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\  -prjname  test_syn  -log  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synlog\test_fpga_mapper.srr 
-rc:0 success:1 runtime:1
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.edf|io:o|time:1642626622|size:1696|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_prem.srd|io:i|time:1642626621|size:1188|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.sap|io:o|time:1642626621|size:125|exec:0
+rc:0 success:1 runtime:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.edf|io:o|time:1645640982|size:1696|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_prem.srd|io:i|time:1645640982|size:1188|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.sap|io:o|time:1645640982|size:125|exec:0
 file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.tap|io:o|time:0|size:0|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.map|io:o|time:1642626622|size:28|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.map|io:o|time:1645640982|size:28|exec:0
 file:C:\lscc\iCEcube2.2020.12\synpbase\lib\generic\sb_ice40.v|io:i|time:1642464398|size:224837|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.sap|io:o|time:1642626621|size:125|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\syntmp\test.plg|io:o|time:1642626622|size:236|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.srm|io:o|time:1642626622|size:1780|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synlog\test_fpga_mapper.srr|io:o|time:1642626622|size:7223|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.sap|io:o|time:1645640982|size:125|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\syntmp\test.plg|io:o|time:1645640982|size:236|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\test.srm|io:o|time:1645640982|size:1780|exec:0
+file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synlog\test_fpga_mapper.srr|io:o|time:1645640982|size:7223|exec:0
 file:C:\lscc\iCEcube2.2020.12\synpbase\bin\m_generic.exe|io:i|time:1642464396|size:17853440|exec:1
 file:C:\lscc\iCEcube2.2020.12\synpbase\bin64\m_generic.exe|io:i|time:1642464397|size:32355840|exec:1
