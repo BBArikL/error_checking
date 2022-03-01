@@ -1,9 +1,11 @@
 Selecting top level module ErrorChecking_tb
 @W: CG730 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":25:7:25:22|Top-level module ErrorChecking_tb has no ports
 
+@N: CG364 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking.v":42:7:42:17|Synthesizing module localAnswer in library work.
+
 @N: CG364 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":25:7:25:22|Synthesizing module ErrorChecking_tb in library work.
 
-@W: CG532 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":33:1:33:7|Within an initial block, only Verilog force statements and memory $readmemh/$readmemb initialization statements are recognized, and all other content is ignored.
-@W: CG133 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":28:11:28:18|Object question is declared but not assigned. Either assign a value or remove the declaration.
-@W: CG360 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":29:12:29:17|Removing wire answer, as there is no assignment to it.
-@W: CG133 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":32:9:32:9|Object i is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG532 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":32:1:32:7|Within an initial block, only Verilog force statements and memory $readmemh/$readmemb initialization statements are recognized, and all other content is ignored.
+@W: CG133 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":27:11:27:18|Object question is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":31:9:31:9|Object i is declared but not assigned. Either assign a value or remove the declaration.
+@W: CL168 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":30:13:30:22|Removing instance testAnswer because it does not drive other instances. To preserve this instance, use the syn_noprune synthesis directive.

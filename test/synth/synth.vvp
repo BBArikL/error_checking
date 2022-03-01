@@ -1,0 +1,70 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001d24e246560 .scope module, "QuestionGeneration" "QuestionGeneration" 2 9;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /OUTPUT 4 "questionToOBC";
+L_000001d24e2448a0 .functor BUFZ 4, v000001d24e237650_0, C4<0000>, C4<0000>, C4<0000>;
+o000001d24e247098 .functor BUFZ 1, C4<z>; HiZ drive
+v000001d24e2378d0_0 .net "clk", 0 0, o000001d24e247098;  0 drivers
+v000001d24e237650_0 .var "question", 3 0;
+RS_000001d24e247008 .resolv tri, L_000001d24e2448a0, L_000001d24e1fae90;
+v000001d24e236ed0_0 .net8 "questionToOBC", 3 0, RS_000001d24e247008;  2 drivers
+E_000001d24e2359b0 .event posedge, v000001d24e2378d0_0;
+S_000001d24e246880 .scope module, "send" "sendToOBC" 2 18, 2 5 0, S_000001d24e246560;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "localquestion";
+    .port_info 1 /OUTPUT 4 "question";
+L_000001d24e1fae90 .functor BUFZ 4, v000001d24e237650_0, C4<0000>, C4<0000>, C4<0000>;
+v000001d24e237830_0 .net "localquestion", 3 0, v000001d24e237650_0;  1 drivers
+v000001d24e2373d0_0 .net8 "question", 3 0, RS_000001d24e247008;  alias, 2 drivers
+S_000001d24e2466f0 .scope module, "localAnswer" "localAnswer" 2 24;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "question";
+    .port_info 1 /OUTPUT 4 "answer";
+L_000001d24e245690 .functor NOT 1, L_000001d24e237290, C4<0>, C4<0>, C4<0>;
+L_000001d24e1f92b0 .functor XOR 1, L_000001d24e237510, L_000001d24e237790, C4<0>, C4<0>;
+L_000001d24e1f9320 .functor XOR 1, L_000001d24e241bf0, L_000001d24e241fb0, C4<0>, C4<0>;
+L_000001d24e243a70 .functor XOR 1, L_000001d24e242230, L_000001d24e241290, C4<0>, C4<0>;
+v000001d24e237d30_0 .net *"_ivl_11", 0 0, L_000001d24e237790;  1 drivers
+v000001d24e237b50_0 .net *"_ivl_12", 0 0, L_000001d24e1f92b0;  1 drivers
+v000001d24e236f70_0 .net *"_ivl_17", 0 0, L_000001d24e241bf0;  1 drivers
+v000001d24e237470_0 .net *"_ivl_19", 0 0, L_000001d24e241fb0;  1 drivers
+v000001d24e237bf0_0 .net *"_ivl_20", 0 0, L_000001d24e1f9320;  1 drivers
+v000001d24e237970_0 .net *"_ivl_26", 0 0, L_000001d24e242230;  1 drivers
+v000001d24e237c90_0 .net *"_ivl_28", 0 0, L_000001d24e241290;  1 drivers
+v000001d24e237dd0_0 .net *"_ivl_29", 0 0, L_000001d24e243a70;  1 drivers
+v000001d24e237150_0 .net *"_ivl_3", 0 0, L_000001d24e237290;  1 drivers
+v000001d24e237010_0 .net *"_ivl_4", 0 0, L_000001d24e245690;  1 drivers
+v000001d24e2375b0_0 .net *"_ivl_9", 0 0, L_000001d24e237510;  1 drivers
+v000001d24e2370b0_0 .net "answer", 3 0, L_000001d24e2404d0;  1 drivers
+o000001d24e247368 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v000001d24e2371f0_0 .net "question", 3 0, o000001d24e247368;  0 drivers
+L_000001d24e237290 .part o000001d24e247368, 0, 1;
+L_000001d24e237510 .part o000001d24e247368, 0, 1;
+L_000001d24e237790 .part o000001d24e247368, 1, 1;
+L_000001d24e241bf0 .part o000001d24e247368, 1, 1;
+L_000001d24e241fb0 .part o000001d24e247368, 2, 1;
+L_000001d24e2404d0 .concat8 [ 1 1 1 1], L_000001d24e245690, L_000001d24e1f92b0, L_000001d24e1f9320, L_000001d24e243a70;
+L_000001d24e242230 .part o000001d24e247368, 2, 1;
+L_000001d24e241290 .part o000001d24e247368, 3, 1;
+    .scope S_000001d24e246560;
+T_0 ;
+    %wait E_000001d24e2359b0;
+    %vpi_func 2 15 "$random" 32 {0 0 0};
+    %pad/s 4;
+    %store/vec4 v000001d24e237650_0, 0, 4;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "synth.v";

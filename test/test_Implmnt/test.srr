@@ -3,7 +3,7 @@
 #OS: Windows 8 6.2
 #Hostname: BRUHMYBAD
 
-# Wed Feb 23 13:36:39 2022
+# Tue Mar 01 14:19:42 2022
 
 #Implementation: test_Implmnt
 
@@ -21,16 +21,17 @@ Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys softwa
 @I::"C:\lscc\iCEcube2.2020.12\synpbase\lib\vlog\scemi_objects.v" (library snps_haps)
 @I::"C:\lscc\iCEcube2.2020.12\synpbase\lib\vlog\scemi_pipes.svh" (library snps_haps)
 @I::"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking.v" (library work)
-@E: CG285 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking.v":129:18:129:23|Expecting statement
+@E: CG283 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking.v":33:3:33:8|Procedural assign is not a supported statement
+@E: CG285 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking.v":128:18:128:23|Expecting statement
 @E: CS187 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking.v":164:0:164:8|Expecting endmodule
 @I::"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v" (library work)
-2 syntax errors
+3 syntax errors
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Wed Feb 23 13:36:39 2022
+# Tue Mar 01 14:19:42 2022
 
 ###########################################################]
 @END
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Wed Feb 23 13:36:39 2022
+# Tue Mar 01 14:19:42 2022
 
 ###########################################################]

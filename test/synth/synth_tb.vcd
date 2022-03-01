@@ -1,0 +1,177 @@
+$date
+	Tue Mar 01 18:05:20 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module synth_tb $end
+$var wire 1 ! result $end
+$var wire 4 " question [3:0] $end
+$var wire 4 # answer [3:0] $end
+$var reg 1 $ clk $end
+$var reg 1 % reset $end
+$scope module uut $end
+$var wire 1 $ clk $end
+$var wire 4 & questionToOBC [3:0] $end
+$var reg 4 ' question [3:0] $end
+$upscope $end
+$scope module uut2 $end
+$var wire 4 ( question [3:0] $end
+$var wire 4 ) answer [3:0] $end
+$upscope $end
+$scope module uut3 $end
+$var wire 4 * answerOBC [3:0] $end
+$var wire 1 $ clk $end
+$var wire 1 ! result $end
+$var wire 4 + question [3:0] $end
+$var wire 4 , answer [3:0] $end
+$scope function answerCompare $end
+$var reg 4 - answer [3:0] $end
+$var reg 4 . answerOBC [3:0] $end
+$upscope $end
+$scope module l1 $end
+$var wire 4 / question [3:0] $end
+$var wire 4 0 answer [3:0] $end
+$upscope $end
+$scope module q1 $end
+$var wire 1 $ clk $end
+$var wire 4 1 questionToOBC [3:0] $end
+$var reg 4 2 question [3:0] $end
+$upscope $end
+$upscope $end
+$scope module uut4 $end
+$var wire 4 3 answerOBC [3:0] $end
+$var wire 1 $ clk $end
+$var wire 1 % reset $end
+$var wire 1 4 result $end
+$var wire 4 5 question [3:0] $end
+$var reg 2 6 next_state [1:0] $end
+$var reg 2 7 present_state [1:0] $end
+$var integer 32 8 correctAnswerCount [31:0] $end
+$var integer 32 9 i [31:0] $end
+$scope module check1 $end
+$var wire 4 : answerOBC [3:0] $end
+$var wire 1 $ clk $end
+$var wire 1 4 result $end
+$var wire 4 ; question [3:0] $end
+$var wire 4 < answer [3:0] $end
+$scope function answerCompare $end
+$var reg 4 = answer [3:0] $end
+$var reg 4 > answerOBC [3:0] $end
+$upscope $end
+$scope module l1 $end
+$var wire 4 ? question [3:0] $end
+$var wire 4 @ answer [3:0] $end
+$upscope $end
+$scope module q1 $end
+$var wire 1 $ clk $end
+$var wire 4 A questionToOBC [3:0] $end
+$var reg 4 B question [3:0] $end
+$upscope $end
+$upscope $end
+$scope module q1 $end
+$var wire 1 $ clk $end
+$var wire 4 C questionToOBC [3:0] $end
+$var reg 4 D question [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 D
+b1 C
+b100 B
+b100 A
+b1101 @
+b100 ?
+b100 >
+b1101 =
+b1101 <
+b100 ;
+b100 :
+bx 9
+bx 8
+bx 7
+bx 6
+b1 5
+04
+b100 3
+b1001 2
+b1001 1
+b1010 0
+b1001 /
+b100 .
+b1010 -
+b1010 ,
+b1001 +
+b100 *
+b100 )
+b11 (
+b11 '
+b11 &
+x%
+1$
+b100 #
+b11 "
+0!
+$end
+#20
+0$
+#40
+1!
+b110 .
+b110 -
+b110 >
+b111 =
+b111 <
+b111 @
+b110 ,
+b110 0
+b110 #
+b110 )
+b110 *
+b110 3
+b110 :
+b10 ;
+b10 ?
+b10 A
+b10 B
+b101 5
+b101 C
+b101 D
+b1101 +
+b1101 /
+b1101 1
+b1101 2
+b1101 "
+b1101 &
+b1101 '
+b1101 (
+1$
+#60
+0$
+#80
+0!
+b1011 -
+b10 =
+b1011 ,
+b1011 0
+b10 <
+b10 @
+b110 +
+b110 /
+b110 1
+b110 2
+b1101 5
+b1101 C
+b1101 D
+b1 ;
+b1 ?
+b1 A
+b1 B
+1$
+#100
