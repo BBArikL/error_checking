@@ -22,7 +22,7 @@
 //{{ Section below this comment is automatically maintained
 //   and may be overwritten
 //{module {error_checking_tb}}
-module ErrorChecking_tb ();
+/*module ErrorChecking_tb ();
 	
 	//input wire [3:0] question
 	reg [3:0] question;
@@ -42,4 +42,4 @@ module ErrorChecking_tb ();
 
 // -- Enter your statements here -- //
 
-endmodule
+endmodule*/
