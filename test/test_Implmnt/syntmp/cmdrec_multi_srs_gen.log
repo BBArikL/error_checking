@@ -1,7 +1,0 @@
-C:\lscc\iCEcube2.2020.12\synpbase\bin64\syn_nfilter.exe  -link  -multisrs  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_comp.srs  -osyn  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_mult.srs  -log  C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synlog\test_multi_srs_gen.srr 
-rc:0 success:1 runtime:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_comp.srs|io:i|time:1642626620|size:1344|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synwork\test_mult.srs|io:o|time:1642626621|size:1014|exec:0
-file:C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_Implmnt\synlog\test_multi_srs_gen.srr|io:o|time:1642626621|size:914|exec:0
-file:C:\lscc\iCEcube2.2020.12\synpbase\bin\syn_nfilter.exe|io:i|time:1642464396|size:3128320|exec:1
-file:C:\lscc\iCEcube2.2020.12\synpbase\bin64\syn_nfilter.exe|io:i|time:1642464397|size:3947520|exec:1

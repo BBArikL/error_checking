@@ -1,0 +1,5 @@
+*.log*
+test_Implmnt/
+error_checking/error_checking
+compile/
+log/

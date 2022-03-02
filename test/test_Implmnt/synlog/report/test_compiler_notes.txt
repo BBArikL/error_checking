@@ -1,5 +1,0 @@
-@N|Running in 64-bit mode
-@N|Running in 64-bit mode
-@N: CG364 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking.v":63:7:63:19|Synthesizing module ErrorChecking in library work.
-@N: CG364 :"C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\error_checking\src\error_checking_tb.v":25:7:25:22|Synthesizing module ErrorChecking_tb in library work.
-

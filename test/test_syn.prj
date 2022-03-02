@@ -1,5 +1,5 @@
 #-- Synopsys, Inc.
-#-- Project file C:\Users\Luigi\OneDrive\Documents\Poly\autre\PolyOrbit\test\test_syn.prj
+#-- Project file <>
 #project files
 
 add_file -verilog -lib work "../error_checking/src/error_checking.v" 
