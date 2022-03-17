@@ -61,10 +61,10 @@ module StateMachine(input reset,input clk);
 	//update la valeur de answer chaque fois que la question change
 	task local_answer(input[3:0] question, output[3:0] answer);
 		begin
-			assign answer[0] = ~question[0];
-			assign answer[1] = question[0] ^ question[1];
-			assign answer[2] = question[1] ^ question[2];
-			assign answer[3] = question[2] ^ question[3];
+			answer[0] = ~question[0];
+			answer[1] = question[0] ^ question[1];
+			answer[2] = question[1] ^ question[2];
+			answer[3] = question[2] ^ question[3];
 		end
 	endtask
 
@@ -76,7 +76,7 @@ module StateMachine(input reset,input clk);
 			local_answer(question, answer);
 			
 			// Compare answer and gives back result
-			assign result = (answer == answerOBC) ? 1 : 0;
+			result = (answer == answerOBC) ? 1 : 0;
 		end
 	endtask
 	
