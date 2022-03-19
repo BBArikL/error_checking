@@ -18,11 +18,12 @@
 //
 //-----------------------------------------------------------------------------
 `timescale 1 ns / 1 ps
+`include "./error_checking.v"
 
 //{{ Section below this comment is automatically maintained
 //   and may be overwritten
 //{module {error_checking_tb}}
-/*module ErrorChecking_tb ();
+module ErrorChecking_tb ();
 	
 	//input wire [3:0] question
 	reg [3:0] question;
@@ -42,4 +43,5 @@
 
 // -- Enter your statements here -- //
 
-endmodule*/
+endmodule
+

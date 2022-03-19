@@ -137,27 +137,3 @@ module StateMachine(input reset,input clk);
 			endcase			   	
 		end
 endmodule
-
-module ErrorChecking_tb ();
-	
-	//input wire [3:0] question
-	reg [3:0] question;
-	wire [3:0] answer;
-	wire override; // Placeholders
-	wire reset;
-	 
-	ErrorChecking dut(question, answer, override, reset);  
-	integer i;
-	initial begin
-		for(i = 0; i <15; i = i+1)begin
-			
-			question = i;
-			#10;
-		end	
-		$stop;//stops simulation
-	end
-	
-
-// -- Enter your statements here -- //
-
-endmodule
