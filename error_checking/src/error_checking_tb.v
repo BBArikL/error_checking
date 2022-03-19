@@ -18,6 +18,7 @@
 //
 //-----------------------------------------------------------------------------
 `timescale 1 ns / 1 ps
+`include "./error_checking.v"
 
 //{{ Section below this comment is automatically maintained
 //   and may be overwritten
@@ -45,3 +46,4 @@ module ErrorChecking_tb;
 // -- Enter your statements here -- //
 
 endmodule
+
