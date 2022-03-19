@@ -18,66 +18,7 @@
 //
 //-----------------------------------------------------------------------------
 `timescale 1 ns / 1 ps
-<<<<<<< HEAD
-	
-//send question to obc
-module sendToOBC(input[3:0] localquestion, output[3:0] question);
-	assign question = localquestion;
-endmodule
 
-module QuestionGeneration(input clk, output[3:0] questionToOBC);
-	
-	reg [3:0] question;
-	always@(posedge clk)
-		begin
-				
-			question = $random; //genrerate a bits question  with $random
-		end
-	assign questionToOBC = question;
-	sendToOBC send(.localquestion(question), .question(questionToOBC));
-		
-endmodule
-
-//Module qui calcule la reponse  a la question localement
-//update la valeur de answer chaque fois que la question change
-module localAnswer(input[3:0] question, output[3:0] answer);
-		assign answer[0] = ~question[0];
-		assign answer[1] = question[0] ^ question[1];
-		assign answer[2] = question[1] ^ question[2];
-		assign answer[3] = question[2] ^ question[3];
-endmodule
-
-//Module qui verifie si la reponse local est la meme que celle du obc
-	
-module CheckModule(input[3:0] answerOBC, output result,input clk);
-
-
-wire[3:0] answer;
-wire[3:0] question;
-
-QuestionGeneration q1(.clk(clk), .questionToOBC(question));
-
-
-//generate local answer
-localAnswer l1(question, answer);
-
-	//compare OBC to local
-	function reg answerCompare(input [3:0] answer,input [3:0] answerOBC);
-		begin
-			if(answer == answerOBC)
-				answerCompare <= 1;
-			else
-				answerCompare <= 0;
-		end
-	endfunction
-	//output result
-	assign result = answerCompare(answer,answerOBC);
-
-endmodule	
-=======
-
-
->>>>>>> Arik-Dev
 //high level module that communicates directly with OBC
 module ErrorChecking(input[3:0] question, input [3:0] answerOBC, output override, output reset);
 	wire [3:0] answer;
@@ -104,22 +45,12 @@ module StateMachine(input reset,input clk, input[3:0] answerOBC);
 	localparam checking = 2'b01;
 	localparam valid = 2'b10;
 	localparam shutdown = 2'b11;//va devoir envoyer un signal au OBC 1 de shutdown et  allumer OBC2 
-<<<<<<< HEAD
-	reg result;//
-	wire question; 
-
-	
-	
-	//state register, updates state on clk tik
-	always@(posedge clk,posedge reset)
-=======
 	reg result; //Result
 	wire [3:0] answer = 3'b000;
 	wire [3:0] answerOBC = 3'b000;
 	reg [3:0] question;
 
 	task generate_question(output[3:0] question);
->>>>>>> Arik-Dev
 		begin
 			question = $random;
 		end
@@ -159,16 +90,10 @@ module StateMachine(input reset,input clk, input[3:0] answerOBC);
 		begin
 			case(present_state)
 				start:
-<<<<<<< HEAD
-				begin	
-					CheckModule  check1(answerOBC, result, clk);
-					if(result == 1)
-=======
 				begin
 					check_function(answer, answerOBC, question, result);
 					
 					if(result)
->>>>>>> Arik-Dev
 						next_state = valid;
 					else
 						next_state = checking;
@@ -185,12 +110,8 @@ module StateMachine(input reset,input clk, input[3:0] answerOBC);
 						generate_question(question);
 
 						//envoyer question
-<<<<<<< HEAD
-						//CheckModule check2(.answer(answer), .answerOBC(answerOBC), .result(result));
-=======
 						check_function(answer, answerOBC, question, result);
 						
->>>>>>> Arik-Dev
 						if(result)
 							correctAnswerCount = correctAnswerCount + 1;
 					end
