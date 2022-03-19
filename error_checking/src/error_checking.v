@@ -53,7 +53,7 @@ module StateMachine(input reset,input clk);
 
 	task generate_question(output[3:0] question);
 		begin
-			question = 3'b111; // TODO
+			question = $random;
 		end
 	endtask
 
