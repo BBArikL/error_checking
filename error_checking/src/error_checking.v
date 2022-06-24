@@ -15,124 +15,137 @@
 //-----------------------------------------------------------------------------
 //
 // Description : 
-//
+// 	TODO: 1) structurer le code de fpga en 2 modules, 1 pour l'envoie et l;a reception, l'autre pour l'état selon la/les réponses
+//	 	  2) attacher le module de réponse avec le module I2C, 
+//		  3) Faire le code sur le OBC par rapport à la tâche du FPGA
 //-----------------------------------------------------------------------------
 `timescale 1 ns / 1 ps
 
 //high level module that communicates directly with OBC
-module ErrorChecking(input[3:0] question, input [3:0] answerOBC, output override, output reset);
+module ErrorChecking(output[3:0] question, input [3:0] answerOBC, output override, output reset, input clk);
 	wire [3:0] answer;
 
 
+
+	reg[3:0] localQuestion;	
+
+	task generate_question();
+		begin
+			localQuestion = $random;
+		end
+	endtask
+	
+
+	always@(posedge clk)
+		begin
+			generate_question();
+		end
+	assign question = localQuestion;
 	//QuestionGeneration q(.question(question), .clk(clk));
 	
-	//CheckFunction  check(.answer(answer), .answerOBC(answerOBC), .result(result));
-		
+	//CheckFunction  check(.answer(answer), .answerOBC(answerOBC), .result(result));		
 endmodule
 
 
 //basically le errorchecking module
 //Module that determines action to do according to the obc's state
-module StateMachine(input reset,input clk, input[3:0] answerOBC);
+// module StateMachine(input reset,input clk, input[3:0] answerOBC);
 	
 	
-	reg[1:0] present_state, next_state;
+// 	reg[1:0] present_state, next_state;
 
 	
-	integer i;
-	integer correctAnswerCount;
-	localparam start = 2'b00;
-	localparam checking = 2'b01;
-	localparam valid = 2'b10;
-	localparam shutdown = 2'b11;//va devoir envoyer un signal au OBC 1 de shutdown et  allumer OBC2 
-	reg result; //Result
-	wire [3:0] answer = 3'b000;
-	wire [3:0] answerOBC = 3'b000;
-	reg [3:0] question;
-
-	task generate_question(output[3:0] question);
-		begin
-			question = $random;
-		end
-	endtask
-
-	//Module qui calcule la reponse  a la question localement
-	//update la valeur de answer chaque fois que la question change
-	task local_answer(input[3:0] question, output[3:0] answer);
-		begin
-			answer[0] = ~question[0];
-			answer[1] = question[0] ^ question[1];
-			answer[2] = question[1] ^ question[2];
-			answer[3] = question[2] ^ question[3];
-		end
-	endtask
+// 	//integer i;
+// 	// integer correctAnswerCount;
+// 	localparam sendQuestion = 2'b00;
+// 	localparam checking = 2'b01;
+// 	// localparam valid = 2'b10;
+// 	// localparam shutdown = 2'b11;//va devoir envoyer un signal au OBC 1 de shutdown et  allumer OBC2 
+// 	reg result; //Result
+// 	wire [3:0] answer = 3'b000;
+// 	reg [3:0] question;
 
 
-	task check_function(input[3:0] answer, input[3:0] answerOBC, input[3:0] question, output result);
-		begin
+// 	task generate_question(output[3:0] question);
+// 		begin
+// 			question = $random;
+// 		end
+// 	endtask
+
+// 	//Module qui calcule la reponse  a la question localement
+// 	//update la valeur de answer chaque fois que la question change
+// 	task local_answer(input[3:0] question, output[3:0] answer);
+// 		begin
+// 			answer[0] = ~question[0];
+// 			answer[1] = question[0] ^ question[1];
+// 			answer[2] = question[1] ^ question[2];
+// 			answer[3] = question[2] ^ question[3];
+// 		end
+// 	endtask
+
+
+// 	task check_function(input[3:0] answer, input[3:0] answerOBC, input[3:0] question, output result);
+// 		begin
 	
-			// Gets our local answer
-			local_answer(question, answer);
+// 			// Gets our local answer
+// 			local_answer(question, answer);
 			
-			// Compare answer and gives back result
-			result = (answer == answerOBC) ? 1 : 0;
-		end
-	endtask
+// 			// Compare answer and gives back result
+// 			result = (answer == answerOBC) ? 1 : 0;
+// 		end
+// 	endtask
 	
-	//state register, updates state on clk tik. Reset if reset is high 
-	always@(posedge clk, posedge reset)
-		begin
-			present_state = (reset) ? start : next_state;
-		end 
+// 	//state register, updates state on clk tik. Reset if reset is high or if a new answer arrived from the obc
+// 	always@(posedge clk, posedge reset, answerOBC)
+// 		begin
+// 			present_state = (reset) ? sendQuestion : next_state;
+// 		end 
 		
-	//based on present state do something
-	always@(present_state)
-		begin
-			case(present_state)
-				start:
-				begin
-					check_function(answer, answerOBC, question, result);
-					
-					if(result)
-						next_state = valid;
-					else
-						next_state = checking;
-				end
-				
-				checking:
-				begin
-					//comportement a voir
-					//1: envoyer serie de question
-					//stocker reponse dans un buffer, puis analyser le buffer
-					//2: envoyer serie de question si toute les autre son bonne passer a valid sinon un autre etat de validation de pattern
-					correctAnswerCount = 0;
-					for(i=0; i < 10; i = i + 1)begin
-						generate_question(question);
+// 	//based on present state do something
+// 	always@(present_state)
+// 		begin
+// 			case(present_state)
+// 				sendQuestion:
+// 				begin
 
-						//envoyer question
-						check_function(answer, answerOBC, question, result);
+// 					generate_question(question);
+// 					next_state = checking;
+// 				end
+// 				checking:
+// 				begin
+// 					//comportement a voir
+// 					//1: envoyer serie de question
+// 					//stocker reponse dans un buffer, puis analyser le buffer
+// 					//2: envoyer serie de question si toute les autre son bonne passer a valid sinon un autre etat de validation de pattern
+// 					//correctAnswerCount = 0;
+// 					// for(i=0; i < 10; i = i + 1)begin
+// 					// 	//generate_question(question);
+
+// 					// 	//envoyer question
 						
-						if(result)
-							correctAnswerCount = correctAnswerCount + 1;
-					end
+// 					// 	if(result)
+// 					// 		correctAnswerCount = correctAnswerCount + 1;
+// 					// end
 
-					/* 
-					Maybe we should add a minimal treshold of correct answers (7) 
-					and let it pass but also increment another variable that, if
-					it goes above a certain point (10 times the board has failed for exemple),
-					now we put it to shutdown. 
-					*/ 
-					if(correctAnswerCount == 10)
-						next_state = valid;
-					else
-						next_state = shutdown; //maybe a little extreme but to see
-				end
+// 					check_function(answer, answerOBC, question, result);
+// 					next_state = sendQuestion;
+// 					/* 
+// 					Maybe we should add a minimal treshold of correct answers (7) 
+// 					and let it pass but also increment another variable that, if
+// 					it goes above a certain point (10 times the board has failed for exemple),
+// 					now we put it to shutdown. 
+// 					*/ 
+// 					// if(correctAnswerCount == 10)
+// 					// 	next_state = valid;
+// 					// else
+// 					// 	next_state = shutdown; //maybe a little extreme but to see
+// 				end
 				
-				shutdown:
-				begin
-					//devrait etre certain
-					//Shutdown OBC
-				end	
-			endcase			   	
-		end
-endmodule
+// 				// shutdown:
+// 				// begin
+// 				// 	//devrait etre certain
+// 				// 	//Shutdown OBC
+// 				// end	
+// 			endcase			   	
+// 		end
+// endmodule

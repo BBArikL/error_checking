@@ -24,26 +24,35 @@
 //   and may be overwritten
 //{module {error_checking_tb}}
 module ErrorChecking_tb;
-	
-	//input wire [3:0] question
-	reg [3:0] question;
-	wire [3:0] answer; 
-	 
-	//localAnswer dut(question, answer);  
-	integer i;
-	initial begin
-		for(i = 0; i <15; i = i+1)begin
-			
-			question = i;
-			//answer = localAnswer dut(.question(question), .answer(answer));  
 
-			#10;
-		end	
-		$stop;//stops simulation
+	reg reset;
+	reg clk;
+	output[3:0] question;
+	output override;
+	input [3:0] answerOBC;
+	wire result;
+	reset=0;
+	
+
+	ErrorChecking uut1(question, answerOBC, override, reset, clk);
+
+
+	initial begin
+			$dumpfile("error_checking_tb.vcd");
+			$dumpvars(0, error_checking_tb);
+			
+			clk = 1;
+			#20;
+			clk = 0;
+			#20;
+			clk = 1;
+			#20;
+			clk=0;
+			#20;
+			clk = 1;
+			#20;
+			$display("test coplete");
 	end
 	
-
-// -- Enter your statements here -- //
-
 endmodule
 
