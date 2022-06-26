@@ -26,15 +26,32 @@
 module ErrorChecking_tb;
 
 	reg reset;
+	reg[3:0] answerOBC
 	reg clk;
-	output[3:0] question;
+	wire[3:0] question;
+
 	output override;
 	input [3:0] answerOBC;
 	wire result;
 	reset=0;
 	
 
-	ErrorChecking uut1(question, answerOBC, override, reset, clk);
+	QuestionGeneration uut1(question, clk);
+
+	StateMachine uut2(reset, clk, answerOBC, question, clk, override);
+	//override should always be 0
+	//after 10 iterations the state should change from checking to reset.
+
+	//	always@(posedge clk)
+	task automatic local_answer;
+		begin
+			answerOBC[0] = ~question[0];
+			answerOBC[1] = question[0] ^ question[1];
+			answerOBC[2] = question[1] ^ question[2];
+			answerOBC[3] = question[2] ^ question[3];
+		end
+	endtask
+
 
 
 	initial begin
@@ -42,15 +59,32 @@ module ErrorChecking_tb;
 			$dumpvars(0, error_checking_tb);
 			
 			clk = 1;
-			#20;
+			#10;
 			clk = 0;
-			#20;
+			#10;
 			clk = 1;
-			#20;
-			clk=0;
-			#20;
+			#10;
+			clk= 0;
+			#10;
 			clk = 1;
-			#20;
+			#10;
+			clk = 0;
+			#10;
+			clk = 1;
+			#10;
+			clk= 0;
+			#10;
+			clk = 1;
+			#10;
+			clk = 0;
+			#10;
+			clk = 1;
+			#10;
+			clk= 0;
+			#10;
+			clk = 1;
+			#10;
+			
 			$display("test coplete");
 	end
 	
