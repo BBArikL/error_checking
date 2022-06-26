@@ -38,22 +38,26 @@ module QuestionGeneration(output[3:0] question, input clk);
 			generate_question;
 		end
 	assign question = localQuestion;	
-answerOBC
+
 endmodule
 
 
 //basically le errorchecking module
 //Module that determines action to do according to the obc's state
-module StateMachine(input reset,input clk, input[3:0] answerOBC, input [3:0] question, output override);
+module StateMachine(input reset,input clk, input wire[3:0] answerOBC, input [3:0] question, output override);
 	
 	
 	reg[1:0] present_state, next_state;
 
 	integer correctAnswerCount;
 	integer incorrectAnswerCount;
-	
+	integer succesRate;
+	reg[3:0] answer;
+
+
+
 	localparam checking = 2'b00;
-	localparam reset = 2'b01;
+	localparam recheck = 2'b01;
 	localparam shutdown = 2'b10;//va devoir envoyer un signal au OBC 1 de shutdown et  allumer OBC2 
 	reg result; 
 
@@ -76,61 +80,62 @@ module StateMachine(input reset,input clk, input[3:0] answerOBC, input [3:0] que
 			result = (answer == answerOBC) ? 1 : 0;
 		end
 	endtask
-	
 	//state register, updates state on clk tik. Reset if reset is high or if a new answer arrived from the obc
-	always@(posedge clk, posedge reset, answerOBC)
-		begin
-			present_state = (reset) ? sendQuestion : next_state;
+	// always@(posedge clk)
+	// 	begin
+	// 		present_state = checking  
+	// 	end 
+	initial begin
+		result = 0;
+		present_state = checking;
+		incorrectAnswerCount = 0;
+		correctAnswerCount = 0;
+		succesRate = 0;
+	end
 
-		end 
 		
 	//based on present state do something
-	always@(present_state)
+	always@(posedge clk)
 		begin
 			case(present_state)
 				checking:
 				begin
-
 					check_function();
 
-					if(result){
-						correctAnswerCount = 1 + correctAnswerCount;
-					} else {
-						incorrectAnswerCount = 1 + incorrectAnswerCount;
-					}
+					if(result == 1)
+						correctAnswerCount = correctAnswerCount + 1;
+					else 
+						incorrectAnswerCount =  incorrectAnswerCount + 1;
 
-					integer succesRate = correctAnswerCount / (incorrectAnswerCount + correctAnswerCount)
+					succesRate = correctAnswerCount / (incorrectAnswerCount + correctAnswerCount);
 
 					//if condition to modify
-					if(10 < correctAnswerCount && succesRate > 0.9){
-						next_state = reset;
-					} else if(10 < incorrectAnswerCount && succesRate < 0.1){
+					if(10 < correctAnswerCount && succesRate > 0.9)
+						next_state = recheck;
+					else if(10 < incorrectAnswerCount && succesRate < 0.1) begin
 						next_state = shutdown;
-						else {
+					end else 
 							next_state = checking;
-						}
-					}
 				end
-				reset:
+				recheck:
 				begin
 					
 					//one last check, might aswell because to change state a question has to have been asked
-					check_function()
+					check_function();
 
-					if(!result){
+					if(!result)begin
 						incorrectAnswerCount = 1 + incorrectAnswerCount;
 						next_state = checking;
-						break;
-					}
-
-					correctAnswerCount = 0;
-					incorrectAnswerCount = 0;
-					next_state = checking;
-					
+					end 
+					else begin
+						correctAnswerCount = 0;
+						incorrectAnswerCount = 0;
+						next_state = checking;
+					end
+						
 				end
 				shutdown:
 					begin
-						override = 1;
 					end	
 			endcase			   	
 		end

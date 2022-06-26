@@ -1,0 +1,10 @@
+Pour synthétiser le test_best:
+
+iverilog -o {nom du ouput file}.vvp {nom du file a synthétiser (le test bench)}.v
+
+pour exécuter le fichier synthétiser:
+vvp {nom du output file}.vpp
+
+
+pour opne gtk pour voir le wave from:
+gtkwave

@@ -26,19 +26,17 @@
 module ErrorChecking_tb;
 
 	reg reset;
-	reg[3:0] answerOBC
 	reg clk;
 	wire[3:0] question;
-
+	input wire [3:0] answer;
 	output override;
-	input [3:0] answerOBC;
+	reg [3:0] answerOBC;
 	wire result;
-	reset=0;
 	
 
 	QuestionGeneration uut1(question, clk);
 
-	StateMachine uut2(reset, clk, answerOBC, question, clk, override);
+	StateMachine uut2(.reset(reset), .clk(clk), .answerOBC(answerOBC), .question(question), .override(override));
 	//override should always be 0
 	//after 10 iterations the state should change from checking to reset.
 
@@ -52,36 +50,43 @@ module ErrorChecking_tb;
 		end
 	endtask
 
-
-
 	initial begin
 			$dumpfile("error_checking_tb.vcd");
-			$dumpvars(0, error_checking_tb);
-			
+			$dumpvars(0, ErrorChecking_tb);
+			local_answer();
+			clk = 0;
+			clk = 1;
+			//answer = answerOBC;
+			#10;
+			clk = 0;
+			local_answer();
+			#10;
+			clk = 1;
+			local_answer();
+			#10;
+			clk= 0;
+			#10;
+			local_answer();
 			clk = 1;
 			#10;
 			clk = 0;
 			#10;
+			local_answer();
 			clk = 1;
 			#10;
 			clk= 0;
 			#10;
+			local_answer();
 			clk = 1;
 			#10;
 			clk = 0;
 			#10;
+			local_answer();
 			clk = 1;
 			#10;
 			clk= 0;
 			#10;
-			clk = 1;
-			#10;
-			clk = 0;
-			#10;
-			clk = 1;
-			#10;
-			clk= 0;
-			#10;
+			local_answer();
 			clk = 1;
 			#10;
 			

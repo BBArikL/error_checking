@@ -1,0 +1,24 @@
+Premièrement nous avons besoin que le obc recoit la question et que la fpga attend sur la réponse(I2C) du OBC( mettre contrainte sur le temps d'attente, pas  d'attente infinie, shutdown si trop long)
+
+error_checking:
+    EInitialiser la machine a etat
+    envoyer la question au OBC
+    attendre la réponse
+    mettre present_state = checking,
+    rentrer dans State_Machine qui générer sa réponse et retourner si les réponse sont identique, output si la réponse est bonne ou non.
+    if(correct){
+        CorectCount++;
+        state = valid;
+
+    }else{
+        sendQuestion
+        state = checking
+    }
+    Error_checking prend charge le control du state machine, 
+    alors après un nombre X de réponse envoyer && correctCount < sieul acceptable alors state = shutdown
+
+    
+
+State_Machine
+
+when shutdown open OBC2
